@@ -1,5 +1,12 @@
-{% include 'partials/header.html' %}
+{% extends 'partials/principal.html' %}
+
+
+{% block title %}Home | {% endblock title %}
+
+{% block content %}
 <div class="main-content-list container">
-    {% include 'partials/recipe.html' %}
+    {% for recipe in recipes %}
+        {% include 'partials/card.html' %}
+    {% endfor %}
 </div>
-{% include 'partials/footer.html' %}
+{% endblock content %}

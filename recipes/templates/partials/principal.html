@@ -22,7 +22,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'recipes/css/styles.css' %}">
-    <title>Recipes</title>
+    <title>{% block title %}{% endblock title %}Recipes</title>
 
 
 </head>
@@ -30,7 +30,7 @@
 <body>
     <header class="main-header-container">
         <div class="main-header container">
-            <h1><a class='main-logo' href="/">
+            <h1><a class='main-logo' href="{% url 'recipes-list' %}">
                     <i class="fas fa-solid fa-utensils main-logo-icon"></i>
                     <span>Recipes</span>
                 </a></h1>
@@ -49,3 +49,17 @@
     </div>
 
     <main class="main-content-container">
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer class="main-footer">
+        <div class="developer">
+            <a href="#" target='_blank' rel='noreferrer noopener'>Claudio Porto</a>
+        </div>
+        <div class="powered">
+            <a href="#" target='_blank' rel='noreferrer noopener'>Powered by Django</a>
+        </div>
+    </footer>
+</body>
+
+</html>
